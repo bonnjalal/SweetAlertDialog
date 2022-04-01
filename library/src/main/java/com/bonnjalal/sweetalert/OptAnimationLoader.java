@@ -1,4 +1,4 @@
-package com.cazaea.sweetalert;
+package com.bonnjalal.sweetalert;
 
 import android.content.Context;
 import android.content.res.Resources;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.cazaea.sweetalert.sample">
+    package="com.bonnjalal.sweetalert.sample">
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.cazaea.sweetalert.sample.SampleActivity"
+            android:name="com.bonnjalal.sweetalert.sample.SampleActivity"
             android:label="@string/app_name"
             android:exported="true">
             <intent-filter>

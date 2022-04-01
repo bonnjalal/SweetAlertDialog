@@ -1,4 +1,4 @@
-package com.cazaea.sweetalert;
+package com.bonnjalal.sweetalert;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 //import com.cazaea.materialishprogress.ProgressWheel;
 
+import com.bonnjalal.sweetalert.R;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
 import java.util.List;

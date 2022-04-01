@@ -1,4 +1,4 @@
-package com.cazaea.sweetalert.sample;
+package com.bonnjalal.sweetalert.sample;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,7 +7,8 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Switch;
 
-import com.cazaea.sweetalert.SweetAlertDialog;
+import com.bonnjalal.sweetalert.SweetAlertDialog;
+import com.bonnjalal.sweetalert.sample.R;
 
 public class SampleActivity extends Activity implements View.OnClickListener {
 

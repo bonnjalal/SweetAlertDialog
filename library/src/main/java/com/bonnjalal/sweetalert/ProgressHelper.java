@@ -1,7 +1,8 @@
-package com.cazaea.sweetalert;
+package com.bonnjalal.sweetalert;
 
 import android.content.Context;
 
+import com.bonnjalal.sweetalert.R;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
 public class ProgressHelper {
