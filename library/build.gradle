@@ -1,12 +1,17 @@
-apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
+//apply plugin: 'com.android.library'
+//apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.bonnjalal'
 android {
-    compileSdkVersion 26
+    compileSdkVersion 31
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         minSdkVersion 9
-        targetSdkVersion 26
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
     }
@@ -22,16 +27,20 @@ android {
      * 以下为配置library注释在打包jar后保留
      */
     // 打包源码jar
+    /*
     task sourcesJar(type: Jar) {
         from android.sourceSets.main.java.srcDirs
         classifier = 'sources'
     }
+
     task javadoc(type: Javadoc) {
         failOnError false
         source = android.sourceSets.main.java.sourceFiles
         classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
         classpath += configurations.compile
     }
+
+
     // 打包文档jar
     task javadocJar(type: Jar, dependsOn: javadoc) {
         classifier = 'javadoc'
@@ -41,11 +50,26 @@ android {
         archives sourcesJar
         archives javadocJar
     }
+    
+     */
 
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = "com.bonnjalal.SweetAlertDialog"
+                artifactId = 'final'
+                version = '1.1'
+            }
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     // 加入自己的依赖包
-    implementation 'com.github.cazaea:materialish-progress:1.0.2'
+    implementation 'com.pnikosis:materialish-progress:1.7'
 }

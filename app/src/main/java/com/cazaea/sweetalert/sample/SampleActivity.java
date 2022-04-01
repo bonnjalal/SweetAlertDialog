@@ -35,26 +35,26 @@ public class SampleActivity extends Activity implements View.OnClickListener {
                 SweetAlertDialog sd = new SweetAlertDialog(this);
                 sd.setCancelable(true);
                 sd.setCanceledOnTouchOutside(true);
-                sd.setConfirmText("OK");
+                sd.setConfirmText("OK", 10);
                 sd.show();
                 break;
             case R.id.under_text_test:
                 new SweetAlertDialog(this)
-                        .setContentText("It's pretty, isn't it?")
-                        .setConfirmText("OK")
+                        .setContentText("It's pretty, isn't it?", 10)
+                        .setConfirmText("OK", 10)
                         .show();
                 break;
             case R.id.error_text_test:
                 new SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE)
-                        .setTitleText("Oops...")
-                        .setContentText("Something went wrong!")
-                        .setConfirmText("OK")
+                        .setTitleText("Oops...", 10)
+                        .setContentText("Something went wrong!", 10)
+                        .setConfirmText("OK", 10)
                         .show();
                 break;
             case R.id.success_text_test:
                 final SweetAlertDialog successDialog = new SweetAlertDialog(this, SweetAlertDialog.SUCCESS_TYPE)
-                        .setTitleText("Good job!")
-                        .setContentText("You clicked the button!");
+                        .setTitleText("Good job!", 10)
+                        .setContentText("You clicked the button!", 10);
                 successDialog.show();
                 new Handler().postDelayed(new Runnable() {
                     @Override
@@ -67,16 +67,16 @@ public class SampleActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.warning_confirm_test:
                 new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
-                        .setTitleText("Are you sure?")
-                        .setContentText("Won't be able to recover this file!")
-                        .setConfirmText("Yes,delete it!")
+                        .setTitleText("Are you sure?", 10)
+                        .setContentText("Won't be able to recover this file!", 10)
+                        .setConfirmText("Yes,delete it!", 10)
                         .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                             @Override
                             public void onClick(SweetAlertDialog sDialog) {
                                 // reuse previous dialog instance
-                                sDialog.setTitleText("Deleted!")
-                                        .setContentText("Your imaginary file has been deleted!")
-                                        .setConfirmText("OK")
+                                sDialog.setTitleText("Deleted!", 10)
+                                        .setContentText("Your imaginary file has been deleted!", 10)
+                                        .setConfirmText("OK", 10)
                                         .setConfirmClickListener(null)
                                         .changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
                             }
@@ -85,18 +85,18 @@ public class SampleActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.warning_cancel_test:
                 new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
-                        .setTitleText("Are you sure?")
-                        .setContentText("Won't be able to recover this file!")
-                        .setCancelText("No,cancel plx!")
-                        .setConfirmText("Yes,delete it!")
+                        .setTitleText("Are you sure?", 10)
+                        .setContentText("Won't be able to recover this file!", 10)
+                        .setCancelText("No,cancel plx!", 10)
+                        .setConfirmText("Yes,delete it!", 10)
                         .showCancelButton(true)
                         .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
                             @Override
                             public void onClick(SweetAlertDialog sDialog) {
                                 // reuse previous dialog instance, keep widget user state, reset them if you need
-                                sDialog.setTitleText("Cancelled!")
-                                        .setContentText("Your imaginary file is safe :)")
-                                        .setConfirmText("OK")
+                                sDialog.setTitleText("Cancelled!", 10)
+                                        .setContentText("Your imaginary file is safe :)", 10)
+                                        .setConfirmText("OK", 10)
                                         .showCancelButton(false)
                                         .setCancelClickListener(null)
                                         .setConfirmClickListener(null)
@@ -114,9 +114,9 @@ public class SampleActivity extends Activity implements View.OnClickListener {
                         .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                             @Override
                             public void onClick(SweetAlertDialog sDialog) {
-                                sDialog.setTitleText("Deleted!")
-                                        .setContentText("Your imaginary file has been deleted!")
-                                        .setConfirmText("OK")
+                                sDialog.setTitleText("Deleted!", 10)
+                                        .setContentText("Your imaginary file has been deleted!", 10)
+                                        .setConfirmText("OK", 10)
                                         .showCancelButton(false)
                                         .setCancelClickListener(null)
                                         .setConfirmClickListener(null)
@@ -127,15 +127,15 @@ public class SampleActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.custom_img_test:
                 new SweetAlertDialog(this, SweetAlertDialog.CUSTOM_IMAGE_TYPE)
-                        .setTitleText("Sweet!")
-                        .setContentText("Here's a custom image.")
+                        .setTitleText("Sweet!", 10)
+                        .setContentText("Here's a custom image.", 10)
                         .setCustomImage(R.drawable.custom_img)
-                        .setConfirmText("OK")
+                        .setConfirmText("OK", 10)
                         .show();
                 break;
             case R.id.progress_dialog:
                 final SweetAlertDialog pDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE)
-                        .setTitleText("Loading");
+                        .setTitleText("Loading", 10);
                 pDialog.show();
                 pDialog.setCancelable(false);
                 new CountDownTimer(800 * 3, 800) {
@@ -169,8 +169,8 @@ public class SampleActivity extends Activity implements View.OnClickListener {
 
                     public void onFinish() {
                         i = -1;
-                        pDialog.setTitleText("Success!")
-                                .setConfirmText("OK")
+                        pDialog.setTitleText("Success!", 10)
+                                .setConfirmText("OK", 10)
                                 .changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
                     }
                 }.start();

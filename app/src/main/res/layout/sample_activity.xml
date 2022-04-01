@@ -35,7 +35,10 @@
             style="@style/dialog_blue_button"
             android:layout_below="@id/txt_0"
             android:layout_centerHorizontal="true"
-            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             android:text="Try me!" />
 
         <TextView

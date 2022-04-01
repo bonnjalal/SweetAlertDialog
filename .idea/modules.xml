@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sweet-alert-dialog.iml" filepath="$PROJECT_DIR$/sweet-alert-dialog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Sweet_Alert_Dialog.iml" filepath="$PROJECT_DIR$/.idea/modules/Sweet_Alert_Dialog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Sweet_Alert_Dialog.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Sweet_Alert_Dialog.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/Sweet_Alert_Dialog.library.iml" filepath="$PROJECT_DIR$/.idea/modules/library/Sweet_Alert_Dialog.library.iml" />
     </modules>
   </component>
 </project>
