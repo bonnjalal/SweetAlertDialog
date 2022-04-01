@@ -24,7 +24,7 @@ The simplest way to use SweetAlertDialog is to add the library as aar dependency
 
 ```
 dependencies {
-        implementation 'com.github.bonnjalal:SweetAlertDialog:1.1.0'
+        implementation 'com.github.bonnjalal:SweetAlertDialog:1.1.1'
     }
 ```
 
