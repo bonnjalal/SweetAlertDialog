@@ -4,7 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/sample_activity.xml" value="0.19791666666666666" />
-        <entry key="library/src/main/res/layout/alert_dialog.xml" value="0.19791666666666666" />
+        <entry key="library/src/main/res/drawable/dialog_background.xml" value="0.151" />
+        <entry key="library/src/main/res/layout/alert_dialog.xml" value="0.5347368421052632" />
       </map>
     </option>
   </component>

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
@@ -17,6 +18,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 //import com.cazaea.materialishprogress.ProgressWheel;
+
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.widget.TextViewCompat;
 
 import com.bonnjalal.sweetalert.R;
 import com.pnikosis.materialishprogress.ProgressWheel;
@@ -35,16 +39,16 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
     private TextView mTitleTextView;
     private TextView mContentTextView;
     private String mTitleText;
-    private float mTitleTextStyle;
+    //private float mTitleTextStyle;
     private String mContentText;
-    private float mContentTextStyle;
+    //private float mContentTextStyle;
     private boolean mShowCancel;
     private boolean mShowConfirm;
     private boolean mShowContent;
     private String mCancelText;
-    private float mCancelTextStyle;
+    //private float mCancelTextStyle;
     private String mConfirmText;
-    private float mConfirmTextStyle;
+    //private float mConfirmTextStyle;
     private int mAlertType;
     private FrameLayout mErrorFrame;
     private FrameLayout mSuccessFrame;
@@ -168,13 +172,30 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         mConfirmButton.setOnClickListener(this);
         mCancelButton.setOnClickListener(this);
 
-        setTitleText(mTitleText, mTitleTextStyle);
-        setContentText(mContentText, mContentTextStyle);
-        setCancelText(mCancelText, mCancelTextStyle);
-        setConfirmText(mConfirmText, mConfirmTextStyle);
+        /*
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            mConfirmButton.setAutoSizeTextTypeUniformWithConfiguration(
+                    10, 15, 1, TypedValue.COMPLEX_UNIT_DIP);
+            mCancelButton.setAutoSizeTextTypeUniformWithConfiguration(
+                    10, 15, 1, TypedValue.COMPLEX_UNIT_DIP);
+
+        }else {
+            TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(mConfirmButton, 10, 100, 1,
+                    TypedValue.COMPLEX_UNIT_DIP);
+            TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(mCancelButton, 10, 100, 1,
+                    TypedValue.COMPLEX_UNIT_DIP);
+        }
+
+         */
+
+        setTitleText(mTitleText);
+        setContentText(mContentText);
+        setCancelText(mCancelText);
+        setConfirmText(mConfirmText);
         changeAlertType(mAlertType, true);
 
     }
+
 
     private void restore () {
         mCustomImage.setVisibility(View.GONE);
@@ -251,23 +272,11 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         return mTitleText;
     }
 
-    public SweetAlertDialog setTitleText (String text, float size) {
+    public SweetAlertDialog setTitleText (String text) {
         mTitleText = text;
-        mTitleTextStyle = size;
         if (mTitleTextView != null && mTitleText != null) {
             mTitleTextView.setText(mTitleText);
-            mTitleTextView.setTextSize(mTitleTextStyle);
-            /*
-            if (mTitleTextStyle != -1){
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    mTitleTextView.setTextAppearance(mTitleTextStyle);
-                }else {
-                    mTitleTextView.setTextAppearance(mContext, mTitleTextStyle);
-                }
-            }
 
-             */
-            //mTitleTextView.setTextSize(mTitleTextStyle);
         }
         return this;
     }
@@ -289,14 +298,12 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         return mContentText;
     }
 
-    public SweetAlertDialog setContentText (String text, float size) {
+    public SweetAlertDialog setContentText (String text) {
         mContentText = text;
-        mContentTextStyle = size;
+        //mContentTextStyle = style;
         if (mContentTextView != null && mContentText != null) {
             showContentText(true);
             mContentTextView.setText(mContentText);
-            mContentTextView.setTextSize(mContentTextStyle);
-
             /*
             if (mContentTextStyle != -1){
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -341,14 +348,11 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         return mCancelText;
     }
 
-    public SweetAlertDialog setCancelText (String text, float size) {
+    public SweetAlertDialog setCancelText (String text) {
         mCancelText = text;
-        mCancelTextStyle = size;
         if (mCancelButton != null && mCancelText != null) {
             showCancelButton(true);
             mCancelButton.setText(mCancelText);
-            mCancelButton.setTextSize(mCancelTextStyle);
-
             /*
             if (mCancelTextStyle != -1){
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -368,13 +372,11 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         return mConfirmText;
     }
 
-    public SweetAlertDialog setConfirmText (String text, float size) {
+    public SweetAlertDialog setConfirmText (String text) {
         mConfirmText = text;
-        mConfirmTextStyle = size;
         if (mConfirmButton != null && mConfirmText != null) {
             showConfirmButton(true);
             mConfirmButton.setText(mConfirmText);
-            mConfirmButton.setTextSize(mConfirmTextStyle);
             /*
             if (mConfirmTextStyle != -1){
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

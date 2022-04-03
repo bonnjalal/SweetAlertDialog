@@ -10,7 +10,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        minSdkVersion 9
+        minSdkVersion 14
         targetSdkVersion 31
         versionCode 1
         versionName "1.0"
@@ -72,4 +72,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     // 加入自己的依赖包
     implementation 'com.pnikosis:materialish-progress:1.7'
+    implementation 'androidx.core:core:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
 }

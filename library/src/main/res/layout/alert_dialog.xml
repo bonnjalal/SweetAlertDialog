@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/loading"
     android:layout_width="@dimen/alert_width"
     android:layout_height="wrap_content"
@@ -145,17 +146,25 @@
         android:layout_marginTop="10dp"
         android:gravity="center">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/cancel_button"
             style="@style/dialog_blue_button"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMaxTextSize="15sp"
+            app:autoSizeMinTextSize="10sp"
+            app:autoSizeStepGranularity="1sp"
             android:layout_marginRight="10dp"
             android:background="@drawable/gray_button_background"
             android:text="@string/dialog_cancel"
             android:visibility="gone" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/confirm_button"
             style="@style/dialog_blue_button"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMaxTextSize="15sp"
+            app:autoSizeMinTextSize="10sp"
+            app:autoSizeStepGranularity="1sp"
             android:text="@string/dialog_ok"
             android:visibility="gone"/>
     </LinearLayout>
